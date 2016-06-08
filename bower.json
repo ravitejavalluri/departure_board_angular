@@ -1,0 +1,13 @@
+{
+  "name": "departures_board_angular",
+  "version": "1.0.0",
+  "main": "path/to/main.css",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "moment": "^2.13.0"
+  },
+  "devDependencies": {}
+}
