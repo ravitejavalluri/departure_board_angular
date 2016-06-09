@@ -1,4 +1,8 @@
+/*
+* Hide angular when load
+*/
 [ng\:cloak],[ng-cloak],.ng-cloak{display:none !important}
+
 
 #loader {  
     position:absolute;
@@ -6,6 +10,9 @@
     top : 40%;
  }
  
+/*
+* Busstop list
+*/
 .busstopsList {
     min-height: 500px;
 }
@@ -13,11 +20,32 @@
 .busstopsList ul {
     overflow-y:scroll;height: 500px;
     margin-top: 35px;
-    background: #000;
+    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
 }
 
-.busstopsList ul li a {
-    color: #9d9d9d;
+.busstopsList ul li {
+    opacity: 1;
+}
+.busstopsList ul li.ng-enter {
+    -webkit-transition: 1s;
+    transition: 1s;
+    opacity: 0;
+}
+.busstopsList ul li.ng-enter-active {
+    opacity: 1;
+}
+
+
+/*
+* Busstop list
+*/
+.table {
+    color: #337ab7;
+}
+
+.table th { 
+    color: #000;
 }
 
 .busstopsList ul li a:hover {
@@ -30,16 +58,14 @@
 }
 
 
-
 /*
- * Base structure
+ * Base structure (BOOTSTRAP DASHBOARD CSS)
  */
 
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
   padding-top: 50px;
 }
-
 
 /*
  * Global add-ons

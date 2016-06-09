@@ -1,0 +1,8 @@
+<div class="col-sm-3 col-md-2 sidebar busstopsList">
+    Search: <input class="busstopSearch" ng-model="search"/>
+    <ul class="nav nav-sidebar">
+      <li ng-repeat="busstop in busstops | filter: search">
+          <a ng-click="selectBusstop(busstop.code, busstop.name)" href="#/departures">{{ busstop.name }}</a>
+      </li>
+    </ul>
+</div>

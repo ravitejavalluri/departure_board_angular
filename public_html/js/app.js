@@ -2,8 +2,8 @@
 /* App Module */
 
 var app = angular.module('DeparturesApp', [
-    'DeparturesBoardControllers',
-    'DeparturesBoardServices',
+    'ngAnimate',
+    'ngRoute'
 ]);
 
 app.config(function(){});

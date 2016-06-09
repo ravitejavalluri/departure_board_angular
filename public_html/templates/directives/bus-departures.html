@@ -1,0 +1,18 @@
+<div class="table-responsive">
+    <table class="table table-striped" ng-hide="loading">
+      <thead>   
+      <tr>
+        <th>Bus number</th>
+        <th>Direction</th>
+        <th>Departure in</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="departure in selectedBusstopDepartures | filter: helperServices.greaterThan('secondsToDeparture', 0) | orderBy : 'secondsToDeparture' | limitTo: 10">
+            <td>{{ departure.busnumber }}</td>
+            <td>{{ departure.direction }}</td>
+            <td>{{ departure.timeToDeparture }}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>

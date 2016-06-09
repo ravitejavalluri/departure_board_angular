@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    
+    <div class="row">
+        
+        <bus-list></bus-list>  
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main busstopDepartures">
+
+        <h1 class="page-header">{{ selectedName }}</h1>
+        <h4>{{ currentTime }}</h4>
+
+        <div id="loader" ng-show="loading"><img src="images/box.gif" alt="Loading..." /></div>
+
+        <bus-departures></bus-departures>
+        
+      </div>
+    </div>
+</div>

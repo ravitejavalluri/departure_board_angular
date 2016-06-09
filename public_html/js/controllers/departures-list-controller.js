@@ -1,19 +1,16 @@
-/* Controllers */
-var DeparturesBoardControllers = angular.module('DeparturesBoardControllers', []);
-
-DeparturesBoardControllers.controller('DeparturesController', 
-['$scope', '$http', '$filter', '$interval', 'helperServices', 
-    function($scope, $http, $filter, $interval, helperServices) {
-            
+(function () {
+    
+    var DeparturesController = function ($scope, $http, $filter, $interval, helperServices) {
+        
         $scope.helperServices = helperServices;   // pass services to scope      
         $scope.selectedBusstopDepartures = [];    // init departures
-        
+
         var url = 'http://departures_board.local/api/busstops';
         var urlDepartures = 'http://departures_board.local/api/busdepartures';
         
         // refresh 1s clock and time to departure
         $interval(function() {
-            $scope.currentTime = moment().format('YYYY MM DD hh:mm:ss');
+            $scope.currentTime = moment().format('YYYY-MM-DD hh:mm:ss');
             $scope.refreshDepartureTimes();
         }, 1000);
         
@@ -23,7 +20,7 @@ DeparturesBoardControllers.controller('DeparturesController',
             $scope.selectedName = name;
             $scope.searchDepartures();
         }
-
+        
         // search
         $scope.searchDepartures = function() {
                     
@@ -75,6 +72,7 @@ DeparturesBoardControllers.controller('DeparturesController',
             });
         }
         
+        
         // refresh departures
         $scope.refreshDepartureTimes = function() {
             angular.forEach($scope.selectedBusstopDepartures, function(eachObj) {
@@ -89,4 +87,11 @@ DeparturesBoardControllers.controller('DeparturesController',
             $scope.searchDepartures();
         });
         
-    }]);
+    };
+    
+    /* Controller */
+    angular.module('DeparturesApp').controller('DeparturesController',['$scope', '$http', '$filter', '$interval', 'helperServices', DeparturesController]);
+    
+}());
+
+
