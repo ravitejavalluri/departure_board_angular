@@ -5,8 +5,8 @@
         $scope.helperServices = helperServices;   // pass services to scope      
         $scope.selectedBusstopDepartures = [];    // init departures
 
-        var url = 'http://departures_board.local/api/busstops';
-        var urlDepartures = 'http://departures_board.local/api/busdepartures';
+        var url = 'http://departures_board.rmroz.sites.polcode.net/api/busstops';
+        var urlDepartures = 'http://departures_board.rmroz.sites.polcode.net/api/busdepartures';
         
         // refresh 1s clock and time to departure
         $interval(function() {
@@ -71,7 +71,6 @@
                 $scope.loading = false;
             });
         }
-        
         
         // refresh departures
         $scope.refreshDepartureTimes = function() {
